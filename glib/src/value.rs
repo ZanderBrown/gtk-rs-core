@@ -538,6 +538,10 @@ impl StaticType for BoxedValue {
     }
 }
 
+impl GlibPtrDefault for Value {
+    type GlibType = *const gobject_ffi::GValue;
+}
+
 #[doc(hidden)]
 impl<'a> ToGlibPtr<'a, *const gobject_ffi::GValue> for Value {
     type Storage = &'a Value;
